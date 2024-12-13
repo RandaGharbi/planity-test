@@ -1,0 +1,106 @@
+# Projet de Traitement de Fichiers CSV
+
+Ce projet permet de charger un fichier CSV, de le traiter sur le backend pour séparer les données par genre ("male" et "female"), et de retourner un fichier ZIP contenant les fichiers CSV résultants. Il est construit avec une architecture monorepo utilisant **Koa.js** pour le backend et **React** pour le frontend.
+
+## Structure du Projet
+
+```
+root/
+├── packages/
+│   ├── backend/
+│   │   ├── src/
+│   │   │   ├── services/
+│   │   │   │   └── csvProcessor.ts
+│   │   │   └── index.ts
+│   │   ├── package.json
+│   │   └── tsconfig.json
+│   └── frontend/
+│       ├── src/
+│       │   ├── component/
+│       │   ├── styles/
+│       │   ├── main.tsx
+│       │   └── index.css
+│       ├── public/
+│       ├── package.json
+│       └── tsconfig.json
+├── package.json
+└── README.md
+```
+
+## Prérequis
+
+- **Node.js** version 16 ou supérieure
+- **npm** ou **yarn** pour gérer les dépendances
+
+## Installation
+
+1. Clonez le dépôt :
+   ```bash
+   git clone <url-du-repo>
+   cd <nom-du-repo>
+   ```
+
+2. Installez les dépendances à la racine :
+   ```bash
+   npm install
+   # ou avec yarn
+   yarn install
+   ```
+
+3. Installez les dépendances pour chaque package (backend et frontend) :
+   ```bash
+   cd packages/backend
+   npm install
+   cd ../frontend
+   npm install
+   ```
+
+## Lancer le Projet
+
+1. **Démarrer le backend** :
+   ```bash
+   cd packages/backend
+   npm start
+   ```
+   Par défaut, le backend est accessible à l'adresse [http://localhost:5000](http://localhost:5000).
+
+2. **Démarrer le frontend** :
+   ```bash
+   cd packages/frontend
+   npm run dev
+   ```
+   Par défaut, le frontend est accessible à l'adresse [http://localhost:5173](http://localhost:5173).
+
+## Fonctionnalités
+
+### Backend (Koa.js)
+- **Route POST** `/upload` : Permet de téléverser un fichier CSV, de le traiter et de retourner un fichier ZIP contenant deux fichiers CSV (males.csv et females.csv).
+- Gestion des erreurs et validation des fichiers (type CSV uniquement, taille maximale : 400 Mo).
+
+### Frontend (React)
+- Interface utilisateur simple pour sélectionner et téléverser un fichier.
+- Gestion des états de chargement, succès ou erreur.
+- Téléchargement automatique du fichier ZIP généré.
+
+# Backend
+cd packages/backend
+npm test
+
+# Frontend
+cd packages/frontend
+npm test
+```
+
+## Contribution
+
+1. Forkez le dépôt.
+2. Créez une nouvelle branche :
+   ```bash
+   git checkout -b feature/nom-de-la-feature
+   ```
+3. Faites vos modifications et soumettez une pull request.
+
+## Licence
+
+Ce projet est sous licence MIT. Vous êtes libre de l'utiliser et de le modifier.
+

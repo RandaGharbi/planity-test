@@ -1,0 +1,5 @@
+{
+  "name": "monorepo-vite-node",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
