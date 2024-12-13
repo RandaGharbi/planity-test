@@ -36,8 +36,8 @@ root/
 
 1. Clonez le dépôt :
    ```bash
-   git clone <url-du-repo>
-   cd <nom-du-repo>
+   git clone https://github.com/RandaGharbi/planity-test
+   cd planity-test
    ```
 
 2. Installez les dépendances à la racine :
